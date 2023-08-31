@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Z Recipes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="fullscreen_title">FullScreenDialog</string>
+    <string name="save">Save</string>
+    <string name="end_at">End at</string>
+    <string name="start_at">Start at</string>
+    <string name="course_code">Course Code</string>
+    <string name="name">Name</string>
+    <string name="id">Id</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="string_create_new_course" />
+    <string name="create_new_course1">Create New Course</string>
+    <string name="course">Blank_Course</string>
+    <string name="delete">Delete</string>
+    <string name="name_">Name:</string>
+    <string name="code">Course Code:</string>
+    <string name="start">Start At:</string>
+    <string name="end">End At:</string>
+    <string name="id_">ID:</string>
+    <string name="N"> </string>
+    <string name="name_required">Name (Required):</string>
+    <string name="edit">Edit</string>
+    <string name="blank_recipe">Blank recipe</string>
+    <string name="to_save_recipe_card_image_touch_and_hold_for_a_couple_of_seconds">To save recipe card image. Touch and hold for a couple of seconds.</string>
+    <string name="herbs_spices">Herbs/Spices</string>
+    <string name="protein">Protein</string>
+    <string name="fruits_vegetables_grains_legumes">Fruits/Vegetables</string>
+    <string name="starches">Starches</string>
+    <string name="search">Search</string>
+    <string name="not_finding_what_you_want_type_additional_ingredients_below">Not Finding what you
+        want? Type additional ingredients in the box, use commas between each ingredient  </string>
+    <string name="ingredients_list">Ingredients List</string>
+    <string name="clear">Clear</string>
+    <string name="login">LogIn</string>
+    <string name="home">home</string>
+    <string name="saved_cards">Saved Cards</string>
+    <string name="logout">Logout</string>
+    <string name="stockPhotos"><![CDATA[<a href=\"https://www.vecteezy.com/free-photos\">Free Stock photos by Vecteezy</a>]]></string>
+    <string name="quot_https_www_vecteezy_com_free_photos_quot_free_stock_photos_by_vecteezy">\"https://www.vecteezy.com/free-photos\" Free Stock photos by Vecteezy</string>
+    <string name="select_cuisine">Select Cuisine</string>
+</resources>

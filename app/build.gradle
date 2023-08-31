@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.tracks.zrecipes'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.tracks.zrecipes"
+        minSdk 25
+        targetSdk 33
+        versionCode 10
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
+    implementation 'com.google.gms:google-services:4.3.15'
+    // Import the Firebase BoM
+
+
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+
+    // Add the dependency for the Firebase SDK for Google Analytics
+//    implementation 'com.google.firebase:firebase-analytics'
+
+    // TODO: Add the dependencies for any other Firebase products you want to use
+    // See https://firebase.google.com/docs/android/setup#available-libraries
+    // For example, add the dependencies for Firebase Authentication and Cloud Firestore
+//    implementation 'com.google.firebase:firebase-auth'
+//    implementation 'com.google.firebase:firebase-core:21.1.1'
+//    implementation platform('com.google.firebase:firebase-bom:31.5.0')
+//    implementation 'com.firebaseui:firebase-ui-auth:8.0.0'
+//    implementation 'com.google.firebase:firebase-appcheck-playintegrity'
+    implementation 'com.google.android.gms:play-services-auth:20.6.0'
+    implementation 'com.google.android.recaptcha:recaptcha:18.1.2'
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+//    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    //doesn't work if updated
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+//    implementation 'com.google.firebase:firebase-auth-ktx:21.3.0'
+//    implementation 'com.google.firebase:firebase-firestore-ktx:24.5.0'
+    def room_version = "2.5.0"
+    def lifecycle_version = "2.5.1"
+
+    //View Model Components
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
