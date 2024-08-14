@@ -1,4 +1,3 @@
-// java/com/tracks/zrecipes/MainActivity.java
 package com.tracks.zrecipes;
 
 import android.content.Intent;
@@ -27,6 +26,7 @@ import com.tracks.zrecipes.db.Recipe;
 public class MainActivity extends AppCompatActivity implements RecipeListFragment.RecipeListListener,
         SelectIngredientsFragment.SelectIngredientsListener, RecyclerViewAdapter.OnItemClickListener,
         RecipeCardFragment.RecipeCardListener {
+
     private FragmentManager fm = getSupportFragmentManager();
     private SelectIngredientsFragment ingredientsFragment;
     private static final String TAG = "MainActivity"; // You can choose any string value you prefer
@@ -120,15 +120,12 @@ public class MainActivity extends AppCompatActivity implements RecipeListFragmen
 
     @Override
     public void ShowViewFrag(int primaryKey) {
-        Log.d(TAG, "calling information for recipe: " + primaryKey);
-        RecipeCardFragment viewFragment = new RecipeCardFragment();
-        Bundle bundle = new Bundle();
+        Log.d("MainActivity", "calling information for recipe: " + primaryKey);
         String recipeID = String.valueOf(primaryKey);
-        bundle.putString("recipeID", recipeID);
-        Log.d(TAG, "calling information FOR recipe: " + primaryKey);
-        viewFragment.setArguments(bundle);
-        fm.beginTransaction()
-                .replace(R.id.fragContainer, viewFragment)
+        RecipeJsonFragment fragment = RecipeJsonFragment.newInstance(recipeID);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragContainer, fragment)
                 .addToBackStack(null)
                 .commit();
     }
@@ -163,7 +160,8 @@ public class MainActivity extends AppCompatActivity implements RecipeListFragmen
     @Override
     public void onItemClick(Recipe recipe) {
         Log.d("test", "calling information for recipe: " + recipe);
-        RecipeCardFragment viewFragment = new RecipeCardFragment();
+        // Change this to load RecipeJsonFragment instead of RecipeCardFragment
+        RecipeJsonFragment viewFragment = new RecipeJsonFragment();
         Bundle bundle = new Bundle();
         String recipeID = String.valueOf(recipe.getId());
         bundle.putString("recipeID", recipeID);
@@ -189,7 +187,6 @@ public class MainActivity extends AppCompatActivity implements RecipeListFragmen
 //        logout();
     }
 
-
     @Override
     public void save(String recipeCardURL) {
 
@@ -203,5 +200,4 @@ public class MainActivity extends AppCompatActivity implements RecipeListFragmen
                 .addToBackStack(null)
                 .commit();
     }
-
 }
