@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -132,10 +133,8 @@ public class RecipeListFragment extends Fragment implements RecyclerViewAdapter.
     public void onResume() {
         super.onResume();
 
-        // Get a reference to the "create new" FAB and set an OnClickListener to handle clicks
         Context context = getContext();
 
-        // Set up the RecyclerView and adapter for displaying the list of recipes
         recyclerView = root.findViewById(R.id.userRecyleV);
         int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.spacing);
         recyclerView.addItemDecoration(new RecyclerViewItemDecoration(spacingInPixels));
@@ -151,12 +150,16 @@ public class RecipeListFragment extends Fragment implements RecyclerViewAdapter.
             }
         });
 
-        // Set the layout manager and adapter for the RecyclerView
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        // Determine the span count based on screen width for responsive design
+        int spanCount = getResources().getConfiguration().screenWidthDp / 180; // 180dp per item
+        if (spanCount < 2) spanCount = 2; // Ensure at least 2 columns
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(context, spanCount);
+        recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(adapter);
 
-        // Set the RecyclerView to not have a fixed size so that changes to the adapter are not ignored
-        recyclerView.setHasFixedSize(false);
+        // Set the RecyclerView to have a fixed size to optimize performance
+        recyclerView.setHasFixedSize(true);
 
         // Set up an observer for changes to the list of recipes stored in the ViewModel
         new ViewModelProvider(this).get(AllRecipesViewModel.class).getAllRecipes(context).observe(this, new Observer<List<Recipe>>() {
@@ -169,6 +172,7 @@ public class RecipeListFragment extends Fragment implements RecyclerViewAdapter.
             }
         });
     }
+
 
     public class RecyclerViewItemDecoration extends RecyclerView.ItemDecoration {
         private int space;

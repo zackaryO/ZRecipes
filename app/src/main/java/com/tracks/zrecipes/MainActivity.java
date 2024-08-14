@@ -155,50 +155,6 @@ public class MainActivity extends AppCompatActivity implements RecipeListFragmen
                 .commit();
     }
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//    }
-
-//    @Override
-//    public void ShowViewFrag(int primaryKey) {
-//        Log.d("test", "calling information for recipe: " + primaryKey);
-//        RecipeCardFragment viewFragment = new RecipeCardFragment();
-//        Bundle bundle = new Bundle();
-//        String recipeID = String.valueOf(primaryKey);
-//        bundle.putString("recipeID", recipeID);
-//        Log.d("this", "calling information FOR recipe: " + primaryKey);
-//        viewFragment.setArguments(bundle);
-//        fm.beginTransaction()
-//                .replace(R.id.fragContainer, viewFragment)
-//                .addToBackStack(null)
-//                .commit();
-//    }
-
-//    @Override
-//    public void clearIngredients() {
-//        if (ingredientsFragment == null) {
-//            ingredientsFragment = (SelectIngredientsFragment) getSupportFragmentManager().findFragmentByTag("selectIg");
-//        }
-//        if (ingredientsFragment != null) {
-//            ingredientsFragment.clearIngredients();
-//        }
-//    }
-
-
-//    @Override
-//    public void GetIngredients(String ingredients) {
-//        RecipeListFragment viewFragment = new RecipeListFragment();
-//        Bundle bundle = new Bundle();
-//        bundle.putString("ingredientList", ingredients);
-//        viewFragment.setArguments(bundle);
-//        fm.beginTransaction()
-//                .replace(R.id.fragContainer, viewFragment)
-//                .addToBackStack(null)
-//                .commit();
-//    }
-
     @Override
     public void Login() {
 
@@ -242,11 +198,10 @@ public class MainActivity extends AppCompatActivity implements RecipeListFragmen
     @Override
     public void home() {
         SelectIngredientsFragment viewFragment = new SelectIngredientsFragment();
-               fm.beginTransaction()
+        fm.beginTransaction()
                 .replace(R.id.fragContainer, viewFragment)
                 .addToBackStack(null)
                 .commit();
     }
 
 }
-

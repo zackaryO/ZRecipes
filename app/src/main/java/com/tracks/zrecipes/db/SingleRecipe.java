@@ -87,12 +87,6 @@ public class SingleRecipe {
         return sb.toString();
     }
 
-
-
-
-
-
-
     public void setAnalyzedInstructions(AnalyzedInstruction[] analyzedInstructions) {
         this.analyzedInstructions = analyzedInstructions;
     }

@@ -59,7 +59,7 @@ public class SelectIngredientsFragment extends Fragment {
         void Logout();
     }
 
-//    private String selectedIngredientsString;
+    //    private String selectedIngredientsString;
     private String allSelectedIngredientsString;
     // Create the lists of food ingredientsBeef
     String[] proteins = new String[]{"", "Beef", "Chicken", "Crab", "Clams", "Cheese", "Duck", "Eggs",
@@ -137,7 +137,7 @@ public class SelectIngredientsFragment extends Fragment {
         imgVeg = root.findViewById(R.id.imgVeg);
         imgSpice = root.findViewById(R.id.imgSpice);
         //String proteinUrl = "https://thumbs.dreamstime.com/z/raw-meats-collection-board-67834263.jpg";
-       // Picasso.get().load(proteinUrl).into(imgProtein);
+        // Picasso.get().load(proteinUrl).into(imgProtein);
 //        String spiceUrl = "https://thumbs.dreamstime.com/z/various-herbs-spices-black-stone-plate-57018503.jpg";
 //        Picasso.get().load(spiceUrl).into(imgSpice);
 //        String vegUrl = "https://thumbs.dreamstime.com/z/healthy-food-vegan-vegetarian-nutrition-" +

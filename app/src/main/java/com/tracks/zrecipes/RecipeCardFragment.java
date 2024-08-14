@@ -129,26 +129,42 @@ public class RecipeCardFragment extends Fragment implements GetSingleRecipe.OnRe
 
     @Override
     public void onRecipeLoaded(RecipeCard recipeCard) {
-        if (recipeCard.getImageData() != null) {
-
-            // Convert byte array to bitmap
-            Bitmap bitmap = BitmapFactory.decodeByteArray(recipeCard.getImageData(), 0, recipeCard.getImageData().length);
-
-            // Load bitmap into the ImageView directly
-            recipe_card_image.setImageBitmap(bitmap);
+        if (recipeCard != null && recipeCard.getImageUrl() != null) {
+            // Use Picasso or Glide to load the image
+            Picasso.get()
+                    .load(recipeCard.getImageUrl())
+                    .into(recipe_card_image);
 
             // Set click listener for the floating action button to save the image
-            createNew.setOnClickListener(v -> saveImageToGallery(bitmap));
+            createNew.setOnClickListener(v -> saveImageToGalleryFromUrl(recipeCard.getImageUrl()));
 
-            // Set touch listener for the recipe card image for zooming and dragging functionality
-            recipe_card_image.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    return RecipeCardFragment.this.onTouchEvent(event);
-                }
-            });
+            recipe_card_image.setOnTouchListener((v, event) -> RecipeCardFragment.this.onTouchEvent(event));
+        } else {
+            Log.e("RecipeCardFragment", "RecipeCard is null or has no image URL.");
+            Toast.makeText(getActivity(), "Failed to load recipe. Please try again later.", Toast.LENGTH_LONG).show();
         }
     }
+
+
+    private void saveImageToGalleryFromUrl(String imageUrl) {
+        Picasso.get().load(imageUrl).into(new Target() {
+            @Override
+            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                saveImageToGallery(bitmap);
+            }
+
+            @Override
+            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+                Toast.makeText(getActivity(), "Failed to save image", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onPrepareLoad(Drawable placeHolderDrawable) {
+                // Do nothing
+            }
+        });
+    }
+
 
     // Method to save the image to the gallery
     private void saveImageToGallery(Bitmap bitmap) {

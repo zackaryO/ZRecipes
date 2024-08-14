@@ -50,4 +50,19 @@
     <string name="stockPhotos"><![CDATA[<a href=\"https://www.vecteezy.com/free-photos\">Free Stock photos by Vecteezy</a>]]></string>
     <string name="quot_https_www_vecteezy_com_free_photos_quot_free_stock_photos_by_vecteezy">\"https://www.vecteezy.com/free-photos\" Free Stock photos by Vecteezy</string>
     <string name="select_cuisine">Select Cuisine</string>
+    <string name="cuisine_spinner_description">Select a cuisine type</string>
+    <string name="select_cuisine_prompt">Choose a cuisine</string>
+
+    <string name="herbs_spinner_description">Select herbs and spices</string>
+    <string name="select_herbs_prompt">Choose herbs and spices</string>
+
+    <string name="protein_spinner_description">Select a protein</string>
+    <string name="select_protein_prompt">Choose a protein</string>
+
+    <string name="starch_spinner_description">Select a starch</string>
+    <string name="select_starch_prompt">Choose a starch</string>
+
+    <string name="fruits_and_veg_spinner_description">Select fruits and vegetables</string>
+    <string name="select_fruits_and_veg_prompt">Choose fruits and vegetables</string>
+
 </resources>

@@ -42,8 +42,11 @@
                 <Spinner
                     android:id="@+id/cuisine_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4sp" />
+                    android:layout_height="48dp"
+                android:layout_marginTop="4sp"
+                android:padding="8dp"
+                android:contentDescription="@string/cuisine_spinner_description"
+                android:prompt="@string/select_cuisine_prompt" />
 
             </LinearLayout>
 
@@ -83,7 +86,9 @@
                     android:layout_height="140dp"
                     android:contentDescription="@string/stockPhotos"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/_400_herbs_and_spices_with_wooden_spoons" />
+                    android:src="@drawable/_400_herbs_and_spices_with_wooden_spoons"
+                    android:background="#FF000000"
+                    android:alpha="0.8" />
 
                 <TextView
                     android:id="@+id/lblSpice"
@@ -96,8 +101,11 @@
                 <Spinner
                     android:id="@+id/herbs_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4sp" />
+                    android:layout_height="48dp"
+                android:layout_marginTop="4sp"
+                android:padding="8dp"
+                android:contentDescription="@string/herbs_spinner_description"
+                android:prompt="@string/select_herbs_prompt" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -125,7 +133,9 @@
                     android:layout_height="140dp"
                     android:contentDescription="@string/stockPhotos"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/vecteezy_beef_meat_and_fish_pieces_6419571_362" />
+                    android:src="@drawable/vecteezy_beef_meat_and_fish_pieces_6419571_362"
+                    android:background="#FF000000"
+                android:alpha="0.8" />
 
                 <TextView
                     android:id="@+id/lblProtein"
@@ -138,8 +148,11 @@
                 <Spinner
                     android:id="@+id/protein_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4sp" />
+                    android:layout_height="48dp"
+                android:layout_marginTop="4sp"
+                android:padding="8dp"
+                android:contentDescription="@string/protein_spinner_description"
+                android:prompt="@string/select_protein_prompt" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -166,7 +179,9 @@
                     android:layout_height="140dp"
                     android:contentDescription="@string/stockPhotos"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/_920_raw_spaghetti_italian_pasta_uncooked_raw_macaroni_instant_noodles_and_rice_vermicelli_in_package_pasta_product_dry_food_non_perishable_food" />
+                    android:src="@drawable/_920_raw_spaghetti_italian_pasta_uncooked_raw_macaroni_instant_noodles_and_rice_vermicelli_in_package_pasta_product_dry_food_non_perishable_food"
+                    android:background="#FF000000"
+                android:alpha="0.8" />
 
                 <TextView
                     android:id="@+id/lblStarch"
@@ -179,8 +194,11 @@
                 <Spinner
                     android:id="@+id/starch_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4sp" />
+                    android:layout_height="48dp"
+                android:layout_marginTop="4sp"
+                android:padding="8dp"
+                android:contentDescription="@string/starch_spinner_description"
+                android:prompt="@string/select_starch_prompt" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -207,7 +225,9 @@
                     android:layout_height="140dp"
                     android:contentDescription="@string/stockPhotos"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/_400_a_variety_of_organic_fruits_and_vegetables" />
+                    android:src="@drawable/_400_a_variety_of_organic_fruits_and_vegetables"
+                    android:background="#FF000000"
+                android:alpha="0.8" />
 
                 <TextView
                     android:id="@+id/lblVeggies"
@@ -220,8 +240,11 @@
                 <Spinner
                     android:id="@+id/fruits_and_veg_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4sp" />
+                    android:layout_height="48dp"
+                android:layout_marginTop="4sp"
+                android:padding="8dp"
+                android:contentDescription="@string/fruits_and_veg_spinner_description"
+                android:prompt="@string/select_fruits_and_veg_prompt" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -283,7 +306,3 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-
-
-
-
