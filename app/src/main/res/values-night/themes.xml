@@ -1,3 +1,4 @@
+<!--res/values-night/themes.xml-->
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.ZRecipes" parent="Theme.MaterialComponents.DayNight.DarkActionBar">

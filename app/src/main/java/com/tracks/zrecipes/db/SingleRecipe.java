@@ -1,3 +1,4 @@
+// java/com/tracks/zrecipes/db/SingleRecipe.java
 package com.tracks.zrecipes.db;
 
 import androidx.room.Entity;

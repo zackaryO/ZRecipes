@@ -1,3 +1,4 @@
+// java/com/tracks/zrecipes/db/Recipe.java
 package com.tracks.zrecipes.db;
 
 import androidx.room.ColumnInfo;

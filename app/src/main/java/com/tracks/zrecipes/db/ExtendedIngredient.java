@@ -1,3 +1,4 @@
+// java/com/tracks/zrecipes/db/ExtendedIngredient.java
 package com.tracks.zrecipes.db;
 
 public class ExtendedIngredient {
